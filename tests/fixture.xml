@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Urunler>
+  <Urun>
+    <UrunKartiID>5597</UrunKartiID><UrunID>35102</UrunID><StokKodu>BZXL9802-FUME-44</StokKodu>
+    <Barkod>8680000000001</Barkod><UrunAdi>Kapitone Büyük Beden Kaban Füme</UrunAdi>
+    <Aciklama><![CDATA[<p>Kapüşonlu kadın kaban.</p>]]></Aciklama><Marka>RMG</Marka>
+    <StokAdedi>2</StokAdedi><SatisFiyati>2700.00</SatisFiyati><IndirimliFiyat>2090</IndirimliFiyat><ParaBirimi>TRY</ParaBirimi>
+    <UrunUrl>/kapitone-buyuk-beden-kaban-fume</UrunUrl><Resim>https://www.bezexl.com/img/9802.jpg</Resim>
+    <BreadcrumbKat>Dış Giyim &gt; Kaban</BreadcrumbKat><Varyasyon>beden:44;renk:Füme</Varyasyon><UrunAktif>1</UrunAktif>
+  </Urun>
+  <Urun>
+    <UrunKartiID>5597</UrunKartiID><UrunID>35103</UrunID><StokKodu>BZXL9802-FUME-46</StokKodu>
+    <Barkod>8680000000002</Barkod><UrunAdi>Kapitone Büyük Beden Kaban Füme</UrunAdi>
+    <Aciklama>Kapüşonlu kadın kaban.</Aciklama><Marka>RMG</Marka><StokAdedi>0</StokAdedi>
+    <SatisFiyati>2700</SatisFiyati><IndirimliFiyat>2090</IndirimliFiyat><ParaBirimi>TRY</ParaBirimi>
+    <UrunUrl>/kapitone-buyuk-beden-kaban-fume</UrunUrl><Resim>https://www.bezexl.com/img/9802.jpg</Resim>
+    <BreadcrumbKat>Dış Giyim &gt; Kaban</BreadcrumbKat><Varyasyon>beden:46;renk:Füme</Varyasyon><UrunAktif>1</UrunAktif>
+  </Urun>
+</Urunler>
