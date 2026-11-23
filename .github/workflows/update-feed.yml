@@ -3,7 +3,7 @@ name: BezeXL ürün feedini yenile
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 * * * *"
 
 permissions:
   contents: write
@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: bezexl-business-hub-feed
+  group: bezexl-openai-feed
   cancel-in-progress: false
 
 jobs:
