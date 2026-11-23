@@ -1,0 +1,53 @@
+name: BezeXL ürün feedini yenile
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: bezexl-business-hub-feed
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Testleri çalıştır
+        run: python -m unittest discover -s tests -v
+      - name: Ticimax XML verisini dönüştür
+        env:
+          TICIMAX_XML_URL: ${{ secrets.TICIMAX_XML_URL }}
+          SITE_URL: https://www.bezexl.com
+          SELLER_NAME: BezeXL
+          TARGET_COUNTRIES: TR
+          STORE_COUNTRY: TR
+        run: python fetch_and_convert.py
+      - name: Feed dosyasını doğrula
+        run: python validate_feed.py docs/openai-products.csv
+      - name: Güncel feedi depoya kaydet
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/openai-products.csv
+          git diff --cached --quiet || git commit -m "Ürün feedini yenile"
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - name: GitHub Pages'a yayınla
+        id: deployment
+        uses: actions/deploy-pages@v4
